@@ -76,7 +76,7 @@ class ModificarNotas(APIView):
 class ListCategoria(ListAPIView):
     permission_classes = [IsAuthenticated]
     pagination_class = NotaPag
-    serializer_class = NotaSerializer 
+    serializer_class = CategorySerializer
     def get_queryset(self):
         usuario = self.request.user
         if not Autenticacion(usuario, 'view_category'):  
