@@ -109,6 +109,7 @@ class ListGroupsAndPermissions(APIView):
     def get(self, request):
         usuario_id = self.request.user.id
         usuario = User.objects.get(id=usuario_id)
+        print(usuario)
         if usuario.is_admin:
             grupos = Group.objects.all()
             data = []

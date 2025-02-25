@@ -1,0 +1,50 @@
+.titulo_p {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 800px; /* Un poco más ancho */
+    display: flex;
+    justify-content: space-between; /* Espacia los elementos */
+    align-items: center;
+    /* padding: 10px 20px; */
+    background: rgba(50, 50, 50, 0.9); /* Fondo con transparencia */
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+  .bienvenido{
+    margin-top: 5px;
+    color: white;
+  }
+
+.titulo_p button{
+    border: 2px solid #e783f0;
+    /* border: 2px solid #0fbfeb;  azul bonito*/ 
+    margin-right: 5px;
+    white-space: nowrap;
+}
+
+.titulo_p button:hover{
+    background-color:#e783f0;
+    border: 2px solid black;
+    color: white;
+}
+
+.imagen_inicio {
+    position: fixed; /* Fijar en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100vw; /* 100% del ancho de la ventana */
+    height: 100vh; /* 100% del alto de la ventana */
+    background-image: url("../../modules/utils/homepage.png");
+    background-size: cover; /* Ajusta la imagen al tamaño del div */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    z-index: -1; /* Envía la imagen al fondo */
+}
+
+.botones{
+    width: 100%;
+}
