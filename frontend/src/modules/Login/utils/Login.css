@@ -1,0 +1,30 @@
+.Login {
+    max-width: 400px;
+    width: 120%;
+    padding: 20px;
+    background: rgb(211, 198, 198, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(122, 121, 121, 0.7);
+    text-align: center;
+  }
+  
+  .Login input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .Login button {
+    width: 90%;
+    padding: 10px;
+    background-color: #0c0c0c;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .Login button:hover {
+    border: 2px solid #e2dae2;
+  }

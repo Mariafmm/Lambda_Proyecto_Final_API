@@ -40,3 +40,28 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.imagen_inicio {
+  position: fixed; /* Fijar en la pantalla */
+  top: 0;
+  left: 0;
+  width: 100vw; /* 100% del ancho de la ventana */
+  height: 100vh; /* 100% del alto de la ventana */
+  background: #12312f;
+  /* background-image: url("../../modules/Home/utils/homepage.png"); */
+  background-size: cover; /* Ajusta la imagen al tamaño del div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  z-index: -1; /* Envía la imagen al fondo */
+}
+
+.imagen_fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}

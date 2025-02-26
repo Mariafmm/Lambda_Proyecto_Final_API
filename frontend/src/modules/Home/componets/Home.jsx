@@ -37,9 +37,6 @@ function Home(props) {
             </div>
         )
     }
-    
-
-
 
     return (
         <>
