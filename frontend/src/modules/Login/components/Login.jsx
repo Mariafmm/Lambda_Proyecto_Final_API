@@ -1,8 +1,11 @@
 import '../utils/Login.css'
 import {useState} from "react";
 import api from "../../../services/api";
+import { useNavigate } from "react-router-dom";
+
 
 function Login() {
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
@@ -24,6 +27,7 @@ function Login() {
             console.log("Login exitoso:", response.data);
             localStorage.setItem("access_token", response.data.token); // Guarda el token
             alert("Inicio de sesión exitoso"); // Puedes redirigir al usuario aquí
+            navigate("/notas");
         } catch (error) {
             console.error("Error al iniciar sesión:", error);
             setError("Credenciales incorrectas. Inténtalo de nuevo.");
@@ -34,6 +38,8 @@ function Login() {
 
   return (
     <>
+        <div className="imagen_inicio">
+        <div className='contenido'>
         <form onSubmit={handleLogin} className='Login'>
             <h2>Inicie Sesion</h2>
             {/* Muestra el error si existe */}
@@ -44,8 +50,10 @@ function Login() {
             <br/>
             <button type='submit'disabled={loading}>
                     {loading ? "Cargando..." : "Ingresar"}
-                </button>
+            </button>
         </form>
+        </div>
+        </div>
     </>
   )
 }
