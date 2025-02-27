@@ -4,26 +4,19 @@ import './modules/Home/utils/Home.css'
 import Login from './modules/Login/components/Login'
 import './modules/Login/utils/Login.css'
 import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import Notas from './modules/Notas/components/notas'
+// import { useState } from 'react'
 
-function App() {
-  
-
-  // const Nombre_Usuario = "Maria_F";{/*quemado mientras conectamos a los endpoints*/}  
-  // const admin = true;
+function App() {  
   return (
     <>
-      <div className="imagen_inicio">
-        
-      </div>
-      <div>
-      <Login></Login>
-      </div>
-      
-      {/* <Home nombre = {Nombre_Usuario} is_admin = {admin}></Home> */}
-      
-      
+      <Routes>
+          <Route path='' element={<Login/>}/>
+          <Route path='/notas' element={<Notas/>}/>
+      </Routes>     
     </>
   )
-}
+};
 
-export default App
+export default App;
