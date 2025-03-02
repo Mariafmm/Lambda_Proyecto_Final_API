@@ -1,18 +1,18 @@
-
-
 import { useEffect, useState } from "react";
 import CrudTable from "../../Tabla/componets/tabla";
 import api from "../../../services/api";
 
-const Notas = () => {
+const Usuarios = () => {
   const [data, setData] = useState([]);
   const [columns, setColumns] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [nextPage, setNextPage] = useState(null);
   const [prevPage, setPrevPage] = useState(null);
-  const columns_forms = ['titulo', 'descripcion', 'imagen_url', 'categoria']
+  const columns_forms = ['first_name', 'last_name', 'email', 'phone', 'password', 'role']
+  const requiredFields = ['first_name', 'last_name', 'email', 'password'];
+
   const fetchData = (page) => {
-    api.get(`/notas/list/?page_size=${page}`)
+    api.get(`/users/list/?page_size=${page}`)
       .then((res) => {
         console.log("Respuesta de la API:", res.data);
         const results = res.data.results || [];
@@ -46,32 +46,32 @@ const Notas = () => {
   };
 
   const handleCreate = (newUser) => {
-    api.post("/notas/crear/", newUser).then(() => {
+    api.post("/users/crear/", newUser).then(() => {
       fetchData(currentPage);
     });
   };
 
   const handleUpdate = (id, updatedUser) => {
     console.log(id)
-    api.patch(`/notas/modificar/${id}/`, updatedUser) // Asegúrate de que la URL esté bien construida
+    api.patch(`/users/editar/${id}/`, updatedUser) // Asegúrate de que la URL esté bien construida
 
       .then(() => {
         setData(data.map((u) => (u.id === id ? { ...u, ...updatedUser } : u)));
       })
       .catch((error) => {
-        console.error("Error al actualizar la nota:", error);
+        console.error("Error al actualizar el usuario:", error);
       });
   };
   const handleDelete = (id) => {
-    const isConfirmed = window.confirm("¿Estás seguro de que quieres eliminar esta nota?");
+    const isConfirmed = window.confirm("¿Estás seguro de que quieres eliminar este usuario?");
 
     if (isConfirmed) {
-      api.delete(`/notas/borrar/${id}/`)
+      api.delete(`/users/borrar/${id}/`)
         .then(() => {
           setData(data.filter((u) => u.id !== id));
         })
         .catch((error) => {
-          console.error("Error al eliminar la nota:", error);
+          console.error("Error al eliminar el usuario:", error);
         });
     }
   };
@@ -79,10 +79,11 @@ const Notas = () => {
   return (
     <>
       <br/>
-      <h1>Gestión de Notas</h1>
+      <h1>Gestión de Usuarios</h1>
       <CrudTable
         columns={columns}
         columns_forms = {columns_forms}
+        requiredFields={requiredFields}
         data={data}
         currentPage={currentPage}
         nextPage={nextPage}
@@ -96,45 +97,5 @@ const Notas = () => {
   );
 };
 
-export default Notas;
+export default Usuarios;
 
-
-//   // useEffect(() => {
-//   //   api.get("/notas/list/")
-//   //     .then((res) => {
-//   //       console.log("Respuesta de la API:", res.data); // Verifica la estructura
-//   //       const results = res.data.results || [];
-//   //       setData(results);
-
-//   //       if (results.length > 0) {
-//   //         setColumns(Object.keys(results[0]));
-//   //       }
-//   //     })
-//   //     .catch((error) => {
-//   //       console.error("Error al obtener datos:", error);
-//   //       setData([]); // Evita que data sea undefined
-//   //     });
-//   // }, []);
-
-
-//   return (
-//     <>
-//     <br/>
-//       <h1>Gestion de Notas</h1>
-
-//       <CrudTable
-//         columns={columns}
-//         data={data}
-//         onPage = {fetchData}
-//         prevPage= {prevPage}
-//         nextPage = {nextPage}
-//         // onCreate={handleCreate}
-//         // onUpdate={handleUpdate}
-//         // onDelete={handleDelete}
-//       />
-//       </>
-
-//   );
-// };
-
-// export default Notas;

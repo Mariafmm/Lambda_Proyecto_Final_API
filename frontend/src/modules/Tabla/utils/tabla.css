@@ -1,7 +1,135 @@
 .contenido{
+    /* display: flex;
+    justify-content: center; */
     display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 30px; 
+    flex-wrap: nowrap; 
+    transition: all 0.3s ease-in-out;
+    overflow-x:auto;
+    padding: 5px;
+    width: 100%;
+    
 }
 
-/* .tabla{
-    width: 90%;
-} */
+.scroll{
+    max-width: 100%; 
+    min-width: 800px;
+    overflow-x: auto;
+}
+.formulario{
+    width: 30%;
+}
+
+.tabla{    
+    flex: 1; 
+    max-width: 95%; 
+    min-width: 800px;
+    margin-top: 2%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 8px 10px 10px 0px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border-collapse: collapse;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.tabla th, .tabla td {
+    position: sticky;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+.forms {
+    /* margin-top: 20%; */
+    /* margin-right: 20px; */
+    /* max-width: 600%; */
+    max-width: 70%;
+    padding: 30px;
+    background: rgba(12, 12, 12,);
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    /* float: center; */
+    background-color: black;
+}
+
+.forms input{
+   border-radius: 5px;
+   padding: 5px;
+}
+
+.forms input:hover{
+    padding: 10px;
+}
+
+.forms button{
+    width: 50%; /* Que ocupe todo el ancho */
+    padding: 5px;
+    background-color: #000; /* Verde atractivo */
+    color: white; /* Texto blanco para contraste */
+    border-color: #fff;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer; /* Cursor de clic */
+    transition: background 0.3s ease-in-out;
+}
+
+.forms button:hover {
+    background-color: #fff; /* Un poco más oscuro */
+    color: black;
+}
+
+
+.btn{
+    border-color: #000;
+    margin-top: 5px;
+    width: 90px;
+}
+
+.btn:hover{
+    background-color: #000;
+    border-color: #fff;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.crear{
+    padding: 5px;
+    width: 10%;
+}
+
+.borrar:hover{
+    background-color: #dd5a5a;
+}
+
+.editar:hover{
+    background-color: #54ad79;
+}
+
+.title{
+    color: #fff;
+}
+
+
+/* RESPONSIVE: Cuando la pantalla es pequeña */
+@media screen and (max-width: 900px) {
+    .contenido {
+        flex-direction: column; /* Apila la tabla y el formulario */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .tabla {
+        max-width: 100%;
+        min-width: 300px;
+    }
+
+    .forms {
+        max-width: 100%;
+        min-width: 300px;
+    }
+}
+

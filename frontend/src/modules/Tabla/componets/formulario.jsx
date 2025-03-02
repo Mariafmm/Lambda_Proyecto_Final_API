@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-
-const FormCrud = ({ columns, onSubmit, onCancel, initialData }) => {
+import "../utils/tabla.css";
+const FormCrud = ({ columns, onSubmit, onCancel, initialData, requiredFields}) => {
   const [form, setForm] = useState(initialData || {}); // Iniciar con datos previos si existen
 
   useEffect(() => {
@@ -18,7 +18,8 @@ const FormCrud = ({ columns, onSubmit, onCancel, initialData }) => {
 
   return (
     <div className="contenido visible">
-      <form onSubmit={handleSubmit}>
+      <form className="forms" onSubmit={handleSubmit}>
+        <p className="title">{initialData ? "Modificar" : "Crear"}</p>
         {columns.map((col) => (
           <input
             key={col}
@@ -27,7 +28,7 @@ const FormCrud = ({ columns, onSubmit, onCancel, initialData }) => {
             placeholder={col}
             value={form[col] || ""}
             onChange={handleChange}
-            required
+            required={requiredFields.includes(col)} 
           />
         ))}
         <button type="submit">{initialData ? "Actualizar" : "Agregar"}</button>

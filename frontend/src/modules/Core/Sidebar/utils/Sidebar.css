@@ -1,0 +1,79 @@
+/* Barra de navegación */
+.titulo_p {
+    width: 100%;
+    background: #194240;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Título */
+  .actividad {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  
+  /* Contenedor de botones */
+  .titulo_p-items {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap; /* Evita que se bajen de línea */
+    /* margin : auto; */
+    margin-right: 50px;
+  }
+  
+  /* Botones */
+  .dias {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 80px;
+    white-space: nowrap; /* Evita que el texto dentro del botón se divida */
+  }
+  
+  /* Efecto hover */
+.dias:hover {
+    background: white;
+    color: #222;
+    border-color: #222;
+    margin-top: 5%;
+  }
+  
+  /* Ajuste responsive */
+  @media (max-width: 768px) {
+    .titulo_p {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+  
+    .titulo_p-items {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      
+    }
+  
+    .dias {
+      min-width: auto;
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+  }
+  

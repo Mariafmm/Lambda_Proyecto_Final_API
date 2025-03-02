@@ -8,13 +8,15 @@
 
 .Login {
     max-width: 400px;
-    width: 120%;
-    padding: 20px;
+    width: 100%;
+    padding: 50px;
+    /* margin-top: 10%; */
+    height: auto;
     background: rgb(211, 198, 198, 0.7);
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(122, 121, 121, 0.7);
     text-align: center;
-    float: center;
+    /* float: center; */
   }
   
   .Login input {
@@ -32,6 +34,7 @@
     color: white;
     border-radius: 5px;
     margin-top: 10px;
+    margin-bottom: 30px;
   }
   
   .Login button:hover {
@@ -45,5 +48,5 @@
   left: 0;
   width: 100vw; 
   height: 100vh;
-  background: #12312f;
+  background: #194240;
 }
