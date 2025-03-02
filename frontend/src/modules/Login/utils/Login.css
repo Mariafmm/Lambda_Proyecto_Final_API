@@ -1,11 +1,22 @@
+.contenido{
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .Login {
     max-width: 400px;
-    width: 120%;
-    padding: 20px;
+    width: 100%;
+    padding: 50px;
+    /* margin-top: 10%; */
+    height: auto;
     background: rgb(211, 198, 198, 0.7);
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(122, 121, 121, 0.7);
     text-align: center;
+    /* float: center; */
   }
   
   .Login input {
@@ -23,8 +34,19 @@
     color: white;
     border-radius: 5px;
     margin-top: 10px;
+    margin-bottom: 30px;
   }
   
   .Login button:hover {
     border: 2px solid #e2dae2;
   }
+
+  
+.imagen_inicio {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
+  background: #194240;
+}

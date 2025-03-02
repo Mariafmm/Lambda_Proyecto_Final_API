@@ -17,4 +17,21 @@ api.interceptors.request.use(
         return Promise.reject(error);
     }
 )
+
+api.interceptors.response.use(
+    response => {
+        return response;
+    },
+    async (error) => {
+        console.log("Error de token"+ error)
+        if (error.response.status === 401) {
+            localStorage.setItem('session_expired', 'true');
+            localStorage.removeItem('access_token');
+            window.location.href = '/login';
+            return Promise.reject(error);
+        }
+        return Promise.reject(error);
+    }
+)
+
 export default api;
